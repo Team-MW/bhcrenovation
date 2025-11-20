@@ -15,6 +15,10 @@
     color: #111827;
     line-height: 1.6;
   }
+
+  body.nav-open {
+    overflow: hidden;
+  }
   
   /* ========== LAYOUT GLOBAL ========== */
   .container {
@@ -38,6 +42,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.9rem 0;
+    position: relative;
   }
   
   .logo {
@@ -45,6 +50,7 @@
     font-size: 1.25rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    padding-left: 0.5rem;
   }
   
   .logo span {
@@ -91,14 +97,33 @@
     flex-direction: column;
     gap: 4px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    -webkit-appearance: none;
+    appearance: none;
   }
   
   .burger span {
     width: 22px;
     height: 2px;
     background-color: #111827;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
   
+  .burger.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
   /* ========== HERO / SECTIONS ========== */
   .hero {
     padding: 3.5rem 0 3rem;
@@ -108,7 +133,7 @@
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 3rem;
-    align-items: center;
+  align-items: start;
   }
   
   .badge {
@@ -212,12 +237,23 @@
   }
   
   /* Carte droite hero */
-  .hero-card {
+  .hero-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .hero-card,
+  .hero-map-card {
     border-radius: 1.25rem;
     border: 1px solid #e5e7eb;
     padding: 1.4rem;
-    background: radial-gradient(circle at top left, #eff6ff, #ffffff);
+    background: #ffffff;
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  }
+  
+  .hero-card {
+    background: radial-gradient(circle at top left, #eff6ff, #ffffff);
   }
   
   .hero-card-title {
@@ -249,6 +285,61 @@
     border-radius: 999px;
     border: 1px solid #d1d5db;
     background-color: #ffffffcc;
+  }
+
+  .hero-map-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .hero-map-address {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+    align-items: flex-start;
+  }
+  
+  .map-pin {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #1d4ed8;
+    position: relative;
+    margin-top: 0.2rem;
+  }
+  
+  .map-pin::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 3px;
+    left: 3px;
+  }
+  
+  .hero-map-card iframe {
+    width: 100%;
+    border: 0;
+    height: 180px;
+    border-radius: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  
+  .hero-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+  
+  .hero-map-link::after {
+    content: "→";
+    font-size: 0.9rem;
   }
   
   /* ========== SECTIONS GÉNÉRIQUES ========== */
@@ -333,6 +424,33 @@
     border: 1px solid #e5e7eb;
     padding: 1rem;
     background: #f9fafb;
+    overflow: hidden;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  }
+
+  .rea-card:hover {
+    transform: translateY(-3px);
+    border-color: #c7d2fe;
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.04);
+  }
+
+  .rea-card.has-image {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .rea-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f3f4f6;
+  }
+
+  .rea-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   
   .rea-tag {
@@ -340,18 +458,79 @@
     color: #6b7280;
     margin-bottom: 0.4rem;
   }
+
+  .rea-card.has-image .rea-tag {
+    padding: 1rem 1rem 0;
+  }
   
   .rea-title {
     font-weight: 600;
     margin-bottom: 0.3rem;
     font-size: 0.95rem;
   }
+
+  .rea-card.has-image .rea-title {
+    padding: 0 1rem;
+  }
   
   .rea-desc {
     font-size: 0.9rem;
     color: #4b5563;
   }
+
+  .rea-card.has-image .rea-desc {
+    padding: 0 1rem 1rem;
+  }
   
+  /* ========== SECTION VISUELLE ========== */
+  .section-visual {
+    background-color: #f9fafb;
+  }
+
+  .visual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .visual-card {
+    border-radius: 1.25rem;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .visual-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+  }
+
+  .visual-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .visual-card-content {
+    padding: 1.5rem;
+  }
+
+  .visual-card-content h3 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+
+  .visual-card-content p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
   /* ========== CONTACT ========== */
   .contact-wrapper {
     display: grid;
@@ -532,17 +711,49 @@
     .realisations-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .visual-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .visual-card img {
+      height: 240px;
+    }
   
     .nav-links {
       display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 1.5rem 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      z-index: 10;
     }
-  
+
+    .nav-links.is-open {
+      display: flex;
+    }
+
     .burger {
       display: flex;
     }
   }
   
   @media (max-width: 600px) {
+    .hero-map-address {
+      flex-direction: column;
+    }
+
+    .hero-map-card iframe {
+      height: 220px;
+    }
+
     .footer-bottom-inner {
       flex-direction: column;
       text-align: center;
@@ -569,6 +780,14 @@
   
     .hero {
       padding-top: 2.5rem;
+    }
+
+    .visual-card img {
+      height: 200px;
+    }
+
+    .rea-image {
+      height: 160px;
     }
   }
   

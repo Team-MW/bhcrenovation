@@ -13,7 +13,7 @@
     <div class="logo">
       BHC <span>Rénovation</span>
     </div>
-    <nav class="nav-links">
+    <nav class="nav-links" id="primary-navigation">
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
       <a href="realisations.html">Réalisations</a>
@@ -22,9 +22,9 @@
     <div class="nav-phone">
       <a href="tel:+33652059865" style="text-decoration:none;color:inherit;">06 52 05 98 65</a>
     </div>
-    <div class="burger" aria-label="Menu mobile">
+    <button class="burger" type="button" aria-label="Ouvrir le menu mobile" aria-expanded="false" aria-controls="primary-navigation">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </header>
 
@@ -40,16 +40,12 @@
           Isolation, rénovation & finitions pour votre <span>intérieur</span> et votre <span>façade</span>.
         </h1>
         <p class="hero-subtitle">
-          BHC Rénovation vous accompagne pour tous vos travaux :
-          isolation intérieure et extérieure, peinture, plomberie, électricité,
-          maçonnerie et plâtrerie. Un seul interlocuteur pour votre projet.
+          BHC Rénovation vous accompagne pour tous vos travaux : <br/>
+          Un seul interlocuteur pour votre projet.
         </p>
 
         <ul class="hero-list">
           <li>
-            <span class="check">✓</span>
-            <span>Isolation intérieure & extérieure</span>
-          </li>
           <li>
             <span class="check">✓</span>
             <span>Peinture, plomberie, électricité, maçonnerie, plâtrerie</span>
@@ -70,27 +66,43 @@
         </div>
       </div>
 
-      <aside class="hero-card">
-        <div class="hero-card-title">BHC Rénovation</div>
-        <div class="hero-card-row">
-          <span class="hero-card-label">Adresse</span>
-          <span>13 rue de l’Industrie<br>31320 Castanet-Tolosan</span>
-        </div>
-        <div class="hero-card-row" style="margin-top:0.4rem;">
-          <span class="hero-card-label">Téléphone</span>
-          <span><a href="tel:+33652059865" style="text-decoration:none;color:#111827;">06 52 05 98 65</a></span>
-        </div>
-        <div style="margin-top:0.9rem;">
-          <div class="hero-card-label">Spécialités</div>
-          <div class="hero-chip-group">
-            <span class="chip">Isolation intérieure</span>
-            <span class="chip">Isolation extérieure</span>
-            <span class="chip">Peinture</span>
-            <span class="chip">Plomberie</span>
-            <span class="chip">Électricité</span>
-            <span class="chip">Maçonnerie</span>
-            <span class="chip">Plâtrerie</span>
+      <aside class="hero-side">
+        <div class="hero-card">
+          <div class="hero-card-title">BHC Rénovation</div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">Adresse</span>
+            <span>13 rue de l’Industrie<br>31320 Castanet-Tolosan</span>
           </div>
+          <div class="hero-card-row" style="margin-top:0.4rem;">
+            <span class="hero-card-label">Téléphone</span>
+            <span><a href="tel:+33652059865" style="text-decoration:none;color:#111827;">06 52 05 98 65</a></span>
+          </div>
+          <div style="margin-top:0.9rem;">
+            <div class="hero-card-label">Spécialités</div>
+            <div class="hero-chip-group">
+              <span class="chip">Isolation intérieure</span>
+              <span class="chip">Isolation extérieure</span>
+              <span class="chip">Peinture</span>
+              <span class="chip">Plomberie</span>
+              <span class="chip">Électricité</span>
+              <span class="chip">Maçonnerie</span>
+              <span class="chip">Plâtrerie</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-map-card">
+          <p class="hero-map-title">Adresse & plan d’accès</p>
+          <div class="hero-map-address">
+            <span class="map-pin" aria-hidden="true"></span>
+            <div>
+              <strong>13 rue de l’Industrie</strong><br>
+              31320 Castanet-Tolosan
+            </div>
+          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.101420059432!2d1.4990388762325076!3d43.52888217110574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb8700f4c7cb%3A0x8d1da8d5da760c1!2s13%20Rue%20de%20l%27Industrie%2C%2031320%20Castanet-Tolosan!5e0!3m2!1sfr!2sfr!4v1732060000000!5m2!1sfr!2sfr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <a class="hero-map-link" href="https://www.google.com/maps/dir/?api=1&destination=13+rue+de+l%27Industrie+31320+Castanet-Tolosan" target="_blank" rel="noopener noreferrer">
+            Itinéraire dans Google Maps
+          </a>
         </div>
       </aside>
     </div>
@@ -132,6 +144,36 @@
       </div>
     </div>
   </section>
+
+  <section class="section section-visual">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-kicker">Nos domaines d'expertise</p>
+        <h2 class="section-title">Rénovation d'appartement & maison</h2>
+        <p class="section-subtitle">
+          Que ce soit pour un appartement ou une maison, nous adaptons nos solutions
+          à vos besoins spécifiques pour une rénovation réussie.
+        </p>
+      </div>
+
+      <div class="visual-grid">
+        <div class="visual-card">
+          <img src="assets/regles-renovation-appartement.jpg" alt="Rénovation d'appartement - Isolation et finitions" loading="lazy">
+          <div class="visual-card-content">
+            <h3>Rénovation d'appartement</h3>
+            <p>Isolation, rénovation complète et finitions pour transformer votre appartement en espace moderne et confortable.</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="assets/Renovation-maison-ancienne.jpg" alt="Rénovation de maison ancienne - Isolation extérieure et rénovation globale" loading="lazy">
+          <div class="visual-card-content">
+            <h3>Rénovation de maison</h3>
+            <p>Isolation extérieure, rénovation globale et mise aux normes pour valoriser votre maison et améliorer ses performances énergétiques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -165,5 +207,6 @@
     </div>
   </div>
 </footer>
+<script src="main.js"></script>
 </body>
 </html>
