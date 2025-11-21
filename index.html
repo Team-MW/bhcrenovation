@@ -8,6 +8,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page-loader">
+  <div class="loader-content">
+    <div class="loader-logo">BHC <span>Rénovation</span></div>
+    <div class="loader-spinner"></div>
+  </div>
+</div>
+
+<div class="animated-background">
+  <div class="gradient-orb orb-1"></div>
+  <div class="gradient-orb orb-2"></div>
+  <div class="gradient-orb orb-3"></div>
+</div>
+
 <header>
   <div class="container navbar">
     <div class="logo">
@@ -31,13 +44,13 @@
 <main>
   <section class="hero">
     <div class="container hero-grid">
-      <div>
-        <div class="badge">
+      <div class="hero-content">
+        <div class="badge badge-animated">
           <div class="badge-dot"></div>
-          Rénovation globale à Castanet-Tolosan
+          <span class="badge-text">Rénovation globale à Castanet-Tolosan</span>
         </div>
-        <h1>
-          Isolation, rénovation & finitions pour votre <span>intérieur</span> et votre <span>façade</span>.
+        <h1 class="hero-title-animated">
+          Isolation, rénovation & finitions pour votre <span class="text-gradient">intérieur</span> et votre <span class="text-gradient">façade</span>.
         </h1>
         <p class="hero-subtitle">
           BHC Rénovation vous accompagne pour tous vos travaux : <br/>
@@ -45,23 +58,31 @@
         </p>
 
         <ul class="hero-list">
-          <li>
-          <li>
-            <span class="check">✓</span>
+          <li class="hero-list-item">
+            <span class="check check-animated">✓</span>
+            <span>Isolation intérieure & extérieure</span>
+          </li>
+          <li class="hero-list-item">
+            <span class="check check-animated">✓</span>
             <span>Peinture, plomberie, électricité, maçonnerie, plâtrerie</span>
           </li>
-          <li>
-            <span class="check">✓</span>
+          <li class="hero-list-item">
+            <span class="check check-animated">✓</span>
             <span>Rénovation globale : appartement, maison, local pro</span>
           </li>
         </ul>
 
-        <div class="hero-actions">
-          <a href="tel:+33652059865" class="btn btn-primary">
-            Appeler le 06 52 05 98 65
-          </a>
+        <div class="hero-cta-wrapper">
+          <div class="cta-primary">
+            <a href="tel:+33652059865" class="btn btn-primary btn-pulse">
+              <span class="btn-icon">📞</span>
+              <span>Appeler maintenant</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <p class="cta-hint">Réponse immédiate • Devis gratuit</p>
+          </div>
           <a href="contact.html" class="btn btn-outline">
-            Voir les coordonnées complètes
+            Prendre rendez-vous
           </a>
         </div>
       </div>
@@ -108,38 +129,119 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-features">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header scroll-reveal">
         <p class="section-kicker">Pourquoi nous choisir</p>
         <h2 class="section-title">Un interlocuteur unique pour vos travaux</h2>
         <p class="section-subtitle">
           BHC Rénovation coordonne tous les corps de métier pour vous livrer un chantier fini :
-          de l’isolation aux finitions, en passant par les réseaux (eau, électricité) et la maçonnerie.
+          de l'isolation aux finitions, en passant par les réseaux (eau, électricité) et la maçonnerie.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card scroll-reveal">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">🏠</div>
+            <div class="feature-glow"></div>
+          </div>
+          <h3 class="feature-title">Expertise complète</h3>
+          <p class="feature-desc">Tous les corps de métier en un seul interlocuteur</p>
+        </div>
+        <div class="feature-card scroll-reveal">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-glow"></div>
+          </div>
+          <h3 class="feature-title">Réactivité</h3>
+          <p class="feature-desc">Devis rapide et intervention dans les meilleurs délais</p>
+        </div>
+        <div class="feature-card scroll-reveal">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">✨</div>
+            <div class="feature-glow"></div>
+          </div>
+          <h3 class="feature-title">Qualité garantie</h3>
+          <p class="feature-desc">Finitions soignées et respect des normes en vigueur</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-services-preview">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <p class="section-kicker">Nos services</p>
+        <h2 class="section-title">Solutions complètes de rénovation</h2>
+        <p class="section-subtitle">
+          Des prestations sur mesure pour transformer votre habitat en espace moderne et performant.
         </p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card service-card-enhanced scroll-reveal">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">🔧</div>
+            <div class="service-icon-bg"></div>
+          </div>
           <p class="service-label">Isolation</p>
           <h3 class="service-title">Isolation intérieure</h3>
-          <p class="service-list">
-            Amélioration du confort thermique et phonique, pose de cloisons isolées, doublages...
-          </p>
+          <ul class="service-sublist">
+            <li>Cloisons isolées</li>
+            <li>Doublages de murs</li>
+            <li>Correction acoustique</li>
+            <li>Isolation thermique</li>
+          </ul>
+          <a href="services.html#isolation-interieure" class="service-link">En savoir plus →</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service-card-enhanced scroll-reveal">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">🏗️</div>
+            <div class="service-icon-bg"></div>
+          </div>
           <p class="service-label">Isolation</p>
           <h3 class="service-title">Isolation extérieure</h3>
-          <p class="service-list">
-            Isolation des façades, amélioration des performances énergétiques, préparation avant ravalement.
-          </p>
+          <ul class="service-sublist">
+            <li>Isolation thermique par l'extérieur</li>
+            <li>Préparation des façades</li>
+            <li>Amélioration énergétique</li>
+            <li>Ravalement</li>
+          </ul>
+          <a href="services.html#isolation-exterieure" class="service-link">En savoir plus →</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service-card-enhanced scroll-reveal">
+          <div class="service-icon-wrapper">
+            <div class="service-icon">🎨</div>
+            <div class="service-icon-bg"></div>
+          </div>
           <p class="service-label">Rénovation globale</p>
           <h3 class="service-title">Finitions complètes</h3>
-          <p class="service-list">
-            Peinture, plomberie, électricité, maçonnerie et plâtrerie pour une rénovation clé en main.
-          </p>
+          <ul class="service-sublist">
+            <li>Peinture intérieure/extérieure</li>
+            <li>Plomberie & électricité</li>
+            <li>Maçonnerie & plâtrerie</li>
+            <li>Rénovation clé en main</li>
+          </ul>
+          <a href="services.html#renovation-globale" class="service-link">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="cta-section scroll-reveal">
+        <div class="cta-box">
+          <div class="cta-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <h3 class="cta-title">Prêt à transformer votre habitat ?</h3>
+          <p class="cta-text">Obtenez un devis gratuit et personnalisé en moins de 24h</p>
+          <div class="cta-buttons">
+            <a href="tel:+33652059865" class="btn btn-primary btn-large">
+              <span>📞 Appeler maintenant</span>
+            </a>
+            <a href="contact.html" class="btn btn-outline btn-large">
+              <span>Prendre rendez-vous</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
