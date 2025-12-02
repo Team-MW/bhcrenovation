@@ -1680,6 +1680,108 @@
     background: linear-gradient(180deg, rgba(250, 251, 252, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
   }
 
+  .before-after-slider {
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .before-after-slider-inner {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    aspect-ratio: 4 / 3;
+  }
+
+  .before-after-slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .before-after-slider-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .before-after-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .before-after-handle-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.1);
+  }
+
+  .before-after-handle-knob {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+  }
+
+  .before-after-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+  }
+
+  .before-after-slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b7280;
+  }
+
+  .before-after-slider-labels span:first-child {
+    padding-left: 0.25rem;
+  }
+
+  .before-after-slider-labels span:last-child {
+    padding-right: 0.25rem;
+  }
+
   .before-after-container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -2195,6 +2297,10 @@
       gap: 1.5rem;
     }
 
+    .before-after-slider-inner {
+      aspect-ratio: 3 / 4;
+    }
+
     .photo-gallery {
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
       gap: 1rem;
@@ -2293,6 +2399,10 @@
 
     .before-after-grid {
       gap: 1.25rem;
+    }
+
+    .before-after-slider-inner {
+      aspect-ratio: 3 / 4;
     }
 
     .rea-image {

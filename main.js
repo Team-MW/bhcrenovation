@@ -136,6 +136,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Before/After slider
+  const beforeAfterSliders = document.querySelectorAll('.before-after-slider');
+  beforeAfterSliders.forEach((slider) => {
+    const inner = slider.querySelector('.before-after-slider-inner');
+    const afterWrapper = slider.querySelector('.before-after-slider-after');
+    const handle = slider.querySelector('.before-after-handle');
+    const range = slider.querySelector('.before-after-range');
+
+    if (!inner || !afterWrapper || !handle || !range) return;
+
+    const setPosition = (value) => {
+      const clamped = Math.min(100, Math.max(0, value));
+      afterWrapper.style.width = clamped + '%';
+      handle.style.left = clamped + '%';
+    };
+
+    setPosition(range.value || 50);
+
+    range.addEventListener('input', (event) => {
+      setPosition(Number(event.target.value));
+    });
+
+    const updateFromClientX = (clientX) => {
+      const rect = inner.getBoundingClientRect();
+      const relative = ((clientX - rect.left) / rect.width) * 100;
+      setPosition(relative);
+      range.value = String(Math.min(100, Math.max(0, relative)));
+    };
+
+    const startDrag = (event) => {
+      event.preventDefault();
+      const move = (moveEvent) => {
+        const clientX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
+        updateFromClientX(clientX);
+      };
+      const stop = () => {
+        window.removeEventListener('mousemove', move);
+        window.removeEventListener('touchmove', move);
+        window.removeEventListener('mouseup', stop);
+        window.removeEventListener('touchend', stop);
+      };
+
+      window.addEventListener('mousemove', move);
+      window.addEventListener('touchmove', move);
+      window.addEventListener('mouseup', stop);
+      window.addEventListener('touchend', stop);
+    };
+
+    inner.addEventListener('mousedown', startDrag);
+    inner.addEventListener('touchstart', startDrag, { passive: true });
+  });
+
   // Gallery Lightbox
   const galleryItems = document.querySelectorAll('.gallery-item');
   if (galleryItems.length > 0) {

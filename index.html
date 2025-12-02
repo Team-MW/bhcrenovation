@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>BHC Rénovation – Rénovation globale à Castanet-Tolosan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BHC Rénovation – Rénovation globale, isolation intérieure et extérieure, peinture, plomberie, électricité, maçonnerie et plâtrerie à Castanet-Tolosan.">
+  <meta name="description" content="Entreprise de rénovation globale à Castanet-Tolosan : isolation intérieure et extérieure, rénovation d’appartements et maisons, peinture, plomberie, électricité, maçonnerie et plâtrerie.">
+  <link rel="icon" type="image/png" href="assets/batiment.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -239,23 +240,21 @@
         </p>
       </div>
 
-      <div class="before-after-container scroll-reveal">
-        <div class="before-after-card">
-          <div class="before-after-label">Avant</div>
-          <div class="before-after-image">
-            <img src="assets/avant.jpeg" alt="État avant rénovation - BHC Rénovation" loading="lazy">
+      <div class="before-after-slider scroll-reveal">
+        <div class="before-after-slider-inner">
+          <img src="assets/avant.jpeg" alt="Avant rénovation - BHC Rénovation" class="before-after-slider-image before-image" loading="lazy">
+          <div class="before-after-slider-after">
+            <img src="assets/après.jpeg" alt="Après rénovation - BHC Rénovation" class="before-after-slider-image after-image" loading="lazy">
           </div>
-        </div>
-        <div class="before-after-divider">
-          <div class="divider-line"></div>
-          <div class="divider-arrow">→</div>
-          <div class="divider-line"></div>
-        </div>
-        <div class="before-after-card">
-          <div class="before-after-label">Après</div>
-          <div class="before-after-image">
-            <img src="assets/après.jpeg" alt="État après rénovation - BHC Rénovation" loading="lazy">
+          <div class="before-after-handle" aria-hidden="true">
+            <span class="before-after-handle-line"></span>
+            <span class="before-after-handle-knob">⇆</span>
           </div>
+          <input type="range" min="0" max="100" value="50" class="before-after-range" aria-label="Comparer avant et après">
+        </div>
+        <div class="before-after-slider-labels">
+          <span>Avant</span>
+          <span>Après</span>
         </div>
       </div>
 
