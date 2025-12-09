@@ -814,6 +814,12 @@
     }
   }
 
+  /* Variante avec moins de marge verticale pour certaines pages */
+  .section-compact {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+
   .section-features {
     background:
       linear-gradient(180deg, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.4)),
